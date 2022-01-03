@@ -1,2 +1,27 @@
 .footer
+	display flex
+	align-items center
+	height 161px
 	background-color: $gold
+	font-size 1.4rem
+	line-height 1.17
+	color #fff
+
+	&__left
+		display flex
+
+	&__logo
+		width 190px
+
+	&__contacts
+		display grid
+		grid-template repeat(2, 1fr)\/repeat(2, 1fr)
+		column-gap 90px
+
+	&__contact:nth-of-type(3), &__copyright
+		color $dark
+
+	&__link
+		transition .3s ease
+		&:hover
+			opacity .6
