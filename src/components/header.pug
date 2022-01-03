@@ -1,5 +1,31 @@
 header.header
 	.header__top
 		.container
+			.header__columns-top
+				.header__langs
+					button.header__link.active РУС
+					button.header__link ENG
+					button.header__link FR
+				a(href="tel:88001234567").header__tel.header__link 8 (800) 123-45-67
+				a(href="mailto:sales@log.ru" target="_blank").header__email.header__link sales@log.ru
 	.header__btm
 		.container
+			.header__columns-btm
+				.header__left
+					.header__company
+						a(href="/").header__logo.header__link
+							include ../assets/images/header-logo-icon.svg
+						a(href="#").header__addresses.header__link
+							include ../assets/images/header-map-icon.svg
+							p Наши офисы
+				.header__right
+					.header__nav
+						ul
+							li.header__link
+								a(href="#") Услуги
+							li.header__link
+								a(href="#") О компании
+							li.header__link
+								a(href="#") Вакансии
+							li.header__link
+								a(href="#") Контакты

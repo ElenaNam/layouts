@@ -1,7 +1,72 @@
 .header
+	color #fff
+
+	&__top, &__btm
+		display flex
+		align-items center
+
 	&__top
 		height 45px
 		background-color: $gold
+		font-size 1.2rem
+		line-height 1.17
+
 	&__btm
 		height 100px
 		background-color: $dark
+
+		font-size 1.4rem
+		line-height 1.17
+
+	&__columns-top, &__columns-btm
+		display flex
+		justify-content space-between
+		align-items center
+
+	&__langs
+		button
+			opacity .5
+			border none
+			background transparent
+			color #fff
+			text-transform uppercase
+			cursor pointer
+
+			&:active, &.active
+				opacity 1
+
+	&__company
+		display flex
+
+	&__addresses
+		display flex
+		align-items center
+		padding 0 30px
+
+		p
+			margin-left 10px
+
+	&__logo
+		width 190px
+		border-right 1px solid #fff
+
+	&__nav
+		ul
+			display flex
+			justify-content space-between
+			//max-width: 412px
+			//width 100%
+			width 412px
+		li
+			text-transform: uppercase
+
+	&__link
+		transition .3s ease
+		cursor pointer
+		&:hover
+			transform: scale(1.1)
+
+
+	//&__columns-top
+	//&__columns-btm
+
