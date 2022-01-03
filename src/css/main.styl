@@ -1,24 +1,41 @@
 .main
 	background-color $dark
 
+	&__title
+		h2
+			font-size 4rem
+			line-height 1.2
+			text-transform uppercase
+			color #fff
+
+			&:before
+				content ""
+				display block
+				height 6px
+				width 90px
+				margin-bottom 40px
+				background-color $gold
+
 .first
 	display flex
 	align-items center
 	height 620px
-	background-image: url(../assets/images/first-bg.jpg)
-	background-attachment fixed
+	background-image url(../assets/images/first-bg.jpg)
+	background-repeat no-repeat
+	background-size cover
+	background-position: center bottom
 
 	&__wrapper
 		width 100%
-		max-width: 970px
+		max-width 970px
 		padding 0 25px
 		margin 0 auto
 
 	&__inner
 		padding 0 1rem
-		border: 1px solid $gold
+		border 1px solid $gold
 		color #fff
-		text-align: center
+		text-align center
 		h1
 			margin 45px auto
 			font-size 6.4rem
@@ -26,12 +43,56 @@
 			text-transform: uppercase
 		p
 			margin 45px auto
-			max-width: 777px
+			max-width 777px
 			font-size 1.8rem
 			line-height 1.6
 
-
 //.offer
-//.services
+
+.services
+	padding 60px 0
+	color #fff
+
+	&__block
+		display grid
+		grid-template repeat(2, 1fr) \/ repeat(4, 1fr)
+
+	&__item, &__item *
+		transition all .4s ease-in-out
+
+	&__item
+		padding 35px 17px 17px
+		min-height 180px
+		text-align center
+		border 1px solid $dark
+		background-color: $add
+
+		&:hover
+			background-color $gold
+			.services__icon
+				background-color #fff
+			.services__icon svg path
+				fill $dark
+
+	&__icon
+		display flex
+		justify-content center
+		align-items center
+		margin 0 auto
+		width 70px
+		height 70px
+		border-radius 100%
+
+	&__title
+		margin-top auto
+
+		p
+			font-size 1.8rem
+			line-height 1.2
+			font-weight 700
+			text-transform uppercase
+
+
+
 //.about
 //.map
