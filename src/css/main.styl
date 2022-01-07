@@ -15,6 +15,11 @@
 				width 90px
 				margin-bottom 40px
 				background-color $gold
+	&__description
+		p
+			font-size 1.6rem
+			line-height 1.4
+			color #fff
 
 .first
 	display flex
@@ -94,7 +99,65 @@
 
 
 
-//.about
+.about
+	padding 60px 0
+	&__inner
+		display flex
+		justify-content space-between
+		align-items center
+		position relative
+		height 482px
+
+
+	&__left
+		max-width 445px
+		z-index 5
+
+	&__right
+		z-index 5
+
+	&__center
+		position absolute
+		width 410px
+		height 100%
+		background-color $add
+		margin: auto
+		left 0
+		right 0
+
+
+	&__grid
+		display grid
+		grid-template: repeat(2, 1fr) \/ repeat(3, 1fr)
+
+	&__item
+		width 200px
+		height 160px
+		border: 0.25px solid #C8A35F
+
+	&__text-block
+		display flex
+		align-items center
+		justify-content center
+		flex-direction column
+		height 100%
+		background #fff
+
+	&__number
+		font-size 64px
+		line-height 1.17
+		font-weight 700
+
+	&__desc
+		margin-bottom 10px
+		font-size 18px
+		line-height 1.17
+
+	&__small
+		font-size 12px
+		line-height 1.17
+
 .map
+	padding 60px 0 0
 	&> div
 		max-height 450px
