@@ -3,19 +3,30 @@
 
 	&__title
 		h2
-			font-size 4rem
+			font-size 3rem
 			line-height 1.2
 			text-transform uppercase
 			color #fff
+
+			@media small
+				font-size 4rem
 
 			&:before
 				content ""
 				display block
 				height 6px
 				width 90px
-				margin-bottom 40px
+				margin-bottom 15px
 				background-color $gold
+
+				@media small
+					margin-bottom 40px
+
 	&__description
+		padding-bottom 15px
+		@media large
+			padding-right 20px
+			padding-bottom 0
 		p
 			font-size 1.6rem
 			line-height 1.4
@@ -43,9 +54,12 @@
 		text-align center
 		h1
 			margin 45px auto
-			font-size 6.4rem
+			font-size 4rem
 			line-height 1.17
 			text-transform: uppercase
+
+			@media small
+				font-size 6.4rem
 		p
 			margin 45px auto
 			max-width 777px
@@ -55,12 +69,21 @@
 //.offer
 
 .services
-	padding 60px 0
+	padding 30px 0
 	color #fff
+
+	@media medium
+		padding 60px 0
 
 	&__block
 		display grid
-		grid-template repeat(2, 1fr) \/ repeat(4, 1fr)
+
+		@media small
+			grid-template repeat(4, 1fr) \/ repeat(2, 1fr)
+		@media medium
+			grid-template repeat(3, 1fr) \/ repeat(3, 1fr)
+		@media large
+			grid-template repeat(2, 1fr) \/ repeat(4, 1fr)
 
 	&__item, &__item *
 		transition all .4s ease-in-out
@@ -100,35 +123,53 @@
 
 
 .about
-	padding 60px 0
+	padding 30px 0
+
+	@media medium
+		padding 60px 0
+
 	&__inner
 		display flex
 		justify-content space-between
+		flex-direction column
 		align-items center
 		position relative
-		height 482px
+		min-height 482px
+
+		@media large
+			flex-direction row
 
 
 	&__left
-		max-width 445px
 		z-index 5
+
+		@media large
+			max-width 445px
 
 	&__right
 		z-index 5
 
 	&__center
-		position absolute
-		width 410px
-		height 100%
-		background-color $add
-		margin: auto
-		left 0
-		right 0
+
+		@media large
+			position absolute
+			width 410px
+			height 100%
+			background-color $add
+			margin: auto
+			left 0
+			right 0
+
 
 
 	&__grid
 		display grid
-		grid-template: repeat(2, 1fr) \/ repeat(3, 1fr)
+
+		@media small
+			grid-template repeat(3, 1fr) \/ repeat(2, 1fr)
+		@media medium
+			grid-template: repeat(2, 1fr) \/ repeat(3, 1fr)
+
 
 	&__item
 		width 200px
@@ -158,6 +199,9 @@
 		line-height 1.17
 
 .map
-	padding 60px 0 0
+	padding 30px 0 0
+	@media medium
+		padding 60px 0 0
+
 	&> div
 		max-height 450px

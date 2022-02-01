@@ -20,12 +20,18 @@
 
 	&__langs
 		button
+			padding 2px
+			font-size 1rem
 			opacity .5
 			border none
 			background transparent
 			color #fff
 			text-transform uppercase
 			cursor pointer
+
+			@media small
+				padding 1px 6px
+				font-size 1.2rem
 
 			&:active, &.active
 				opacity 1

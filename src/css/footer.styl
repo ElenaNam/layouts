@@ -1,7 +1,7 @@
 .footer
 	display flex
 	align-items center
-	height 161px
+	min-height 161px
 	background-color: $gold
 	font-size 1.4rem
 	line-height 1.17
@@ -9,19 +9,53 @@
 
 	&__left
 		display flex
+		flex-direction column
+		row-gap 15px
+
+		@media small
+			flex-direction row
 
 	&__logo
 		width 190px
 
+		@media small
+			padding-right 20px
+
+
+	.columns
+		flex-direction column
+		row-gap 20px
+		padding 20px 0
+		align-items flex-start
+
+		@media large
+			padding 0
+			flex-direction row
+			align-items center
+
 	&__contacts
 		display grid
-		grid-template repeat(2, 1fr)\/repeat(2, 1fr)
-		column-gap 90px
+
+		@media medium
+			grid-template repeat(2, 1fr)\/repeat(2, 1fr)
+			column-gap 75px
 
 	&__contact:nth-of-type(3), &__copyright
 		color $dark
+
+	&__contact
+		margin-bottom 7px
+		padding-right 15px
+
+		@media medium
+			margin-bottom 0
+
+	&__copyright
+		text-decoration underline
 
 	&__link
 		transition .3s ease
 		&:hover
 			opacity .6
+	&__right
+		flex-shrink 0
