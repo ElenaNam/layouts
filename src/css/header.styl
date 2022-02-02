@@ -10,8 +10,11 @@
 		background-color: $gold
 		font-size 1.2rem
 		line-height 1.17
+		position relative
+		z-index 102
 
 	&__btm
+		position relative
 		height 100px
 		background-color: $dark
 
@@ -40,32 +43,124 @@
 		display flex
 
 	&__addresses
-		display flex
-		align-items center
-		padding 0 30px
+		display none
+
+		@media large
+			display flex
+			align-items center
+			padding 0 30px
 
 		p
 			margin-left 10px
 
+	&__left
+		flex-shrink 0
+
+	&__hamburger
+		position relative
+		z-index 102
+		width 30px
+
+		&:hover
+			cursor pointer
+
+		@media large
+			display none
+
+		span
+
+			display block
+			height 2px
+			width 30px
+			background  white
+
+			&:first-of-type
+				margin-bottom 10px
+
+			&:last-of-type
+				margin-top: 10px
+
+		&.close
+			height 30px
+			span
+				&:nth-of-type(1)
+					transform rotate(45deg)
+				&:nth-of-type(3)
+					transform rotate(-45deg)
+				&:not(:nth-of-type(2))
+					position absolute
+					top 0
+					bottom 0
+					margin auto
+				&:nth-of-type(2)
+					display none
+
+
+
+
 	&__logo
 		width 190px
-		border-right 1px solid #fff
+
+		@media large
+			border-right 1px solid #fff
 
 	&__nav
+		position absolute
+		right 0
+		min-height: 100%
+		width 100%
+		transform translate(0px, -355px)
+		transition all .7s ease-out
+		background: $add
+		z-index 101
+
+		@media large
+			position relative
+			background none
+			transform translate(0, 0)
+
+		&.show
+			transform translate(0px, -65px)
+
 		ul
 			display flex
 			justify-content space-between
+			flex-direction column
+			padding 0 25px
+			margin 35px 0 0
 			//max-width: 412px
 			//width 100%
-			width 412px
+			width 160px
+
+			@media large
+				flex-direction row
+				width 412px
+				padding 0
+				margin 0
 		li
 			text-transform: uppercase
+			margin-bottom 35px
+			@media large
+				margin-bottom 0
+
+			&:last-of-type
+
+				@media large
+					display none
+
+
 
 	&__link
-		transition .3s ease
+
 		cursor pointer
+
 		&:hover
-			transform: scale(1.1)
+			opacity .8
+
+		@media large
+			transition .3s ease
+			&:hover
+				transform: scale(1.1)
 
 
 	//&__columns-top
