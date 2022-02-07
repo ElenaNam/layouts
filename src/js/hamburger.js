@@ -3,6 +3,7 @@ const menu = document.querySelector('.header__nav');
 const page = document.querySelector('.page-wrapper');
 const body = document.querySelector('body');
 
+//клик по кнопке меню
 btnMenu.addEventListener('click', ()=> {
 	btnMenu.classList.toggle('close');
 	menu.classList.toggle('show');
@@ -15,15 +16,21 @@ btnMenu.addEventListener('click', ()=> {
 		body.classList.add('no-scroll');
 
 		overlay.addEventListener('click', () => {
-			menu.classList.remove('show');
-			btnMenu.classList.remove('close');
-			hideOverlay();
+			hideMenu();
 		});
 	} else {
 		hideOverlay();
 	}
 })
 
+//скрыть меню и оверлей
+const hideMenu = () => {
+	menu.classList.remove('show');
+	btnMenu.classList.remove('close');
+	hideOverlay();
+}
+
+//скрыть оверлей
 const hideOverlay = () => {
 	document.querySelector('.overlay').classList.add('hide');
 	setTimeout(()=> {
@@ -32,3 +39,7 @@ const hideOverlay = () => {
 	}, 300)
 }
 
+//клик по элементам меню
+menu.addEventListener('click', (e)=> {
+	if (e.target && e.target.tagName == "A") hideMenu();
+})
